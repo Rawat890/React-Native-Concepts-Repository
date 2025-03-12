@@ -1,0 +1,3 @@
+Generator function is a function that has the ability to pause and resume the execution of function and perfect fit for async operations
+
+We have to create the instance of it and use Yield keyword before any operation, so it makes a break point and pause , multiple return statements and not a pure function
