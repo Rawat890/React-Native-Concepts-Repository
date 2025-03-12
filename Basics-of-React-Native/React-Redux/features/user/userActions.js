@@ -12,12 +12,12 @@ const initialState = {
 
 export function fetchUsersRequest() {
   return {
-    type: FETCH_USERS_FAILED
+    type: FETCH_USERS_REQUEST
   }
 }
 export function fetchUsersSuccess(userData) {
   return {
-    type: FETCH_USERS_REQUEST,
+    type: FETCH_USERS_SUCCESS,
     payload: userData
   }
 }
@@ -31,7 +31,8 @@ export function fetchUsersFailed(error) {
 //thunk
 export function getUsersData() {
   return function (dispatch) {
-    axios.get('https://jsonplaceholder.typicode.com/users/3').then(response => { return response.data }).then((data) => console.log(data)).catch((error) => console.log(error))
+    dispatch(fetchUsersRequest())
+    axios.get('https://jsonplaceholer.typicode.com/users/3').then(response => { return response.data }).then((data) => { console.log(data); dispatch(fetchUsersSuccess()) }).catch((error) => { console.log(error.message); dispatch(fetchUsersFailed()) })
 
   }
 }
@@ -48,7 +49,7 @@ export const userReducer = (state = initialState, action) => {
         userData: action.payload,
         error: ''
       }
-    case FETCH_USERS_REQUEST:
+    case FETCH_USERS_FAILED:
       return {
         loading: false,
         userData: [],
