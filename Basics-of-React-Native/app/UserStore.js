@@ -10,3 +10,4 @@ const unsubscribe = userStore.subscribe(() => console.log("Updated state-", user
 
 
 userStore.dispatch(getUsersData())
+unsubscribe()
