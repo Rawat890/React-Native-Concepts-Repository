@@ -33,7 +33,7 @@ export function priceIceCream(price) {
 
 
 //REDUCER FUNCTIONS
-export const reducer = (state = initialState, action) => {
+export const iceCreamReducer = (state = initialState, action) => {
   switch (action.type) {
     case ICECREAM_ORDERED:
       return {

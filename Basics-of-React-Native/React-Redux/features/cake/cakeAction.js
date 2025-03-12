@@ -33,7 +33,7 @@ export function priceCake(price) {
 
 
 //REDUCER FUNCTIONS
-export const reducer = (state = initialState, action) => {
+export const cakeReducer = (state = initialState, action) => {
   switch (action.type) {
     case CAKE_ORDERED:
       return {

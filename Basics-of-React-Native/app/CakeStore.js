@@ -1,10 +1,10 @@
 import { createStore } from 'redux'
 import { orderCake, priceCake, restockCake } from '../React-Redux/features/cake/cakeAction.js'
-import { reducer } from '../React-Redux/features/cake/cakeAction.js'
+import { cakeReducer } from '../React-Redux/features/cake/cakeAction.js'
 
 import { CAKE_PRICE, CAKE_ORDERED, CAKE_RESTOCKED } from '../React-Redux/features/cake/cakeAction.js'
 
-const store = createStore(reducer)
+const store = createStore(cakeReducer)
 console.log("Initial State: ", store.getState())
 const unsubscribe = store.subscribe(() => console.log("Updated state: ", store.getState()))
 
