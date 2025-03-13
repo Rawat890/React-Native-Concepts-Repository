@@ -1,0 +1,190 @@
+ScrollView Questions (1-50)
+Basic ScrollView Questions
+Create a ScrollView that displays 20 text components vertically.
+
+Create a ScrollView that displays 20 text components horizontally.
+
+Add a background color to the ScrollView and ensure it scrolls smoothly.
+
+Create a ScrollView with a fixed header that remains visible while scrolling.
+
+Add padding to the ScrollView content to avoid overlap with the screen edges.
+
+Create a ScrollView with a footer that remains visible while scrolling.
+
+Add a RefreshControl to the ScrollView to enable pull-to-refresh functionality.
+
+Create a ScrollView that scrolls to a specific position when a button is pressed.
+
+Add a ScrollView inside a SafeAreaView to handle notches and device edges.
+
+Create a ScrollView that displays images and ensures they are properly scaled.
+
+Intermediate ScrollView Questions
+Create a ScrollView with sticky section headers that remain visible while scrolling.
+
+Add a loading spinner to the ScrollView that appears while data is being fetched.
+
+Create a ScrollView with a parallax header image that scales while scrolling.
+
+Add a ScrollView with a collapsible header that shrinks as you scroll down.
+
+Create a ScrollView with a horizontal list of buttons above the main content.
+
+Add a ScrollView with a fixed button at the bottom-right corner that scrolls with the content.
+
+Create a ScrollView with a gradient background that changes as you scroll.
+
+Add a ScrollView with a "scroll to top" button that appears after scrolling down.
+
+Create a ScrollView with a nested ScrollView (horizontal inside vertical).
+
+Add a ScrollView with a "load more" button that appends additional content.
+
+Advanced ScrollView Questions
+Create a ScrollView with a custom scrollbar that shows the current scroll position.
+
+Add a ScrollView with a dynamic height based on the content size.
+
+Create a ScrollView with a "snap to item" functionality for smooth scrolling.
+
+Add a ScrollView with a "scroll to bottom" button for chat-like interfaces.
+
+Create a ScrollView with a "scroll to section" functionality using refs.
+
+Add a ScrollView with a "scroll to index" functionality for a list of items.
+
+Create a ScrollView with a "scroll to offset" functionality for precise control.
+
+Add a ScrollView with a "scroll to end" functionality for long content.
+
+Create a ScrollView with a "scroll to top" functionality for quick navigation.
+
+Add a ScrollView with a "scroll to position" functionality for custom navigation.
+
+Condition-Based ScrollView Questions
+Create a ScrollView that only scrolls if the content height exceeds the screen height.
+
+Add a ScrollView that disables scrolling when a condition is met (e.g., a button is pressed).
+
+Create a ScrollView that changes its scroll direction based on device orientation.
+
+Add a ScrollView that dynamically adjusts its content based on screen size.
+
+Create a ScrollView that displays a "no data" message if the content is empty.
+
+Add a ScrollView that shows a "loading" indicator while data is being fetched.
+
+Create a ScrollView that displays an error message if data fetching fails.
+
+Add a ScrollView that automatically scrolls to the bottom when new content is added.
+
+Create a ScrollView that locks scrolling after reaching a specific position.
+
+Add a ScrollView that enables scrolling only after a button is pressed.
+
+FlatList Questions (51-100)
+Basic FlatList Questions
+Create a FlatList that displays 100 items in a vertical list.
+
+Create a FlatList that displays 100 items in a horizontal list.
+
+Add a FlatList with a fixed header that remains visible while scrolling.
+
+Create a FlatList with a footer that remains visible while scrolling.
+
+Add a RefreshControl to the FlatList to enable pull-to-refresh functionality.
+
+Create a FlatList that scrolls to a specific item when a button is pressed.
+
+Add a FlatList inside a SafeAreaView to handle notches and device edges.
+
+Create a FlatList that displays images and ensures they are properly scaled.
+
+Add a FlatList with a loading spinner that appears while data is being fetched.
+
+Create a FlatList with a "no data" message if the list is empty.
+
+Intermediate FlatList Questions
+Create a FlatList with sticky section headers that remain visible while scrolling.
+
+Add a FlatList with a parallax header image that scales while scrolling.
+
+Create a FlatList with a collapsible header that shrinks as you scroll down.
+
+Add a FlatList with a horizontal list of buttons above the main content.
+
+Create a FlatList with a fixed button at the bottom-right corner that scrolls with the content.
+
+Add a FlatList with a gradient background that changes as you scroll.
+
+Create a FlatList with a "scroll to top" button that appears after scrolling down.
+
+Add a FlatList with a "load more" button that appends additional content.
+
+Create a FlatList with a custom scrollbar that shows the current scroll position.
+
+Add a FlatList with a dynamic height based on the content size.
+
+Advanced FlatList Questions
+Create a FlatList with a "snap to item" functionality for smooth scrolling.
+
+Add a FlatList with a "scroll to bottom" button for chat-like interfaces.
+
+Create a FlatList with a "scroll to section" functionality using refs.
+
+Add a FlatList with a "scroll to index" functionality for a list of items.
+
+Create a FlatList with a "scroll to offset" functionality for precise control.
+
+Add a FlatList with a "scroll to end" functionality for long content.
+
+Create a FlatList with a "scroll to top" functionality for quick navigation.
+
+Add a FlatList with a "scroll to position" functionality for custom navigation.
+
+Create a FlatList with a "load more" functionality that fetches data on scroll.
+
+Add a FlatList with a "lazy load" functionality that loads images as they appear.
+
+Condition-Based FlatList Questions
+Create a FlatList that only renders items visible on the screen (optimization).
+
+Add a FlatList that disables scrolling when a condition is met (e.g., a button is pressed).
+
+Create a FlatList that changes its scroll direction based on device orientation.
+
+Add a FlatList that dynamically adjusts its content based on screen size.
+
+Create a FlatList that displays a "no data" message if the list is empty.
+
+Add a FlatList that shows a "loading" indicator while data is being fetched.
+
+Create a FlatList that displays an error message if data fetching fails.
+
+Add a FlatList that automatically scrolls to the bottom when new content is added.
+
+Create a FlatList that locks scrolling after reaching a specific position.
+
+Add a FlatList that enables scrolling only after a button is pressed.
+
+Complex FlatList Questions
+Create a FlatList with nested FlatList components (e.g., a grid inside a list).
+
+Add a FlatList with a "swipe to delete" functionality for list items.
+
+Create a FlatList with a "drag and drop" functionality to reorder items.
+
+Add a FlatList with a "search and filter" functionality for dynamic content.
+
+Create a FlatList with a "pagination" functionality for large datasets.
+
+Add a FlatList with a "lazy load images" functionality for performance optimization.
+
+Create a FlatList with a "multi-select" functionality for list items.
+
+Add a FlatList with a "checkbox" functionality for selecting items.
+
+Create a FlatList with a "collapsible sections" functionality for grouped data.
+
+Add a FlatList with a "custom separator" between list items.

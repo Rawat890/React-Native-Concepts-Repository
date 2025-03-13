@@ -1,1 +1,4 @@
 React Native is the framework that allows us to create the applications that can be run on both ios and android and they all behave like the native apps that are created using the Java or the Swift for specifically ios and android
+
+
+Redux saga makes testing easier by using pure functions. Since generator functions return iterator objects, you can test the saga's logic without executing the effects.

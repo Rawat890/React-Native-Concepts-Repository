@@ -1,0 +1,168 @@
+Redux Thunk Questions (1-50)
+Basic Concepts
+Create a simple Redux Thunk to fetch data from an API and display it.
+
+Write a Thunk action creator to handle a login API call.
+
+Create a Thunk to fetch a list of users and store it in the Redux store.
+
+Write a Thunk to handle a POST request to add a new item to a list.
+
+Create a Thunk to delete an item from a list using a DELETE request.
+
+Write a Thunk to update an item in a list using a PUT request.
+
+Create a Thunk to handle loading states (e.g., LOADING, SUCCESS, ERROR).
+
+Write a Thunk to fetch paginated data from an API.
+
+Create a Thunk to handle search functionality with an API.
+
+Write a Thunk to handle filtering data from an API.
+
+Intermediate Concepts
+Create a Thunk to handle file uploads to a server.
+
+Write a Thunk to handle real-time updates using WebSockets.
+
+Create a Thunk to handle caching data in the Redux store.
+
+Write a Thunk to handle authentication token refresh.
+
+Create a Thunk to handle error retries for failed API calls.
+
+Write a Thunk to handle race conditions in API calls.
+
+Create a Thunk to handle debounced API calls (e.g., search suggestions).
+
+Write a Thunk to handle dependent API calls (e.g., fetch user details after login).
+
+Create a Thunk to handle parallel API calls.
+
+Write a Thunk to handle sequential API calls.
+
+Advanced Concepts
+Create a Thunk to handle infinite scrolling with paginated data.
+
+Write a Thunk to handle optimistic updates in a todo list.
+
+Create a Thunk to handle undo functionality for deleted items.
+
+Write a Thunk to handle polling for real-time updates.
+
+Create a Thunk to handle bulk actions (e.g., delete multiple items).
+
+Write a Thunk to handle API rate limiting.
+
+Create a Thunk to handle API throttling.
+
+Write a Thunk to handle API caching with expiration.
+
+Create a Thunk to handle API retries with exponential backoff.
+
+Write a Thunk to handle API cancellation.
+
+createAsyncThunk Questions (51-100)
+Basic Concepts
+Create an async thunk using createAsyncThunk to fetch data from an API.
+
+Write an async thunk to handle a login API call.
+
+Create an async thunk to fetch a list of users and store it in the Redux store.
+
+Write an async thunk to handle a POST request to add a new item to a list.
+
+Create an async thunk to delete an item from a list using a DELETE request.
+
+Write an async thunk to update an item in a list using a PUT request.
+
+Create an async thunk to handle loading states (e.g., pending, fulfilled, rejected).
+
+Write an async thunk to fetch paginated data from an API.
+
+Create an async thunk to handle search functionality with an API.
+
+Write an async thunk to handle filtering data from an API.
+
+Intermediate Concepts
+Create an async thunk to handle file uploads to a server.
+
+Write an async thunk to handle real-time updates using WebSockets.
+
+Create an async thunk to handle caching data in the Redux store.
+
+Write an async thunk to handle authentication token refresh.
+
+Create an async thunk to handle error retries for failed API calls.
+
+Write an async thunk to handle race conditions in API calls.
+
+Create an async thunk to handle debounced API calls (e.g., search suggestions).
+
+Write an async thunk to handle dependent API calls (e.g., fetch user details after login).
+
+Create an async thunk to handle parallel API calls.
+
+Write an async thunk to handle sequential API calls.
+
+Advanced Concepts
+Create an async thunk to handle infinite scrolling with paginated data.
+
+Write an async thunk to handle optimistic updates in a todo list.
+
+Create an async thunk to handle undo functionality for deleted items.
+
+Write an async thunk to handle polling for real-time updates.
+
+Create an async thunk to handle bulk actions (e.g., delete multiple items).
+
+Write an async thunk to handle API rate limiting.
+
+Create an async thunk to handle API throttling.
+
+Write an async thunk to handle API caching with expiration.
+
+Create an async thunk to handle API retries with exponential backoff.
+
+Write an async thunk to handle API cancellation.
+
+Combined Redux Thunk and createAsyncThunk Questions (81-100)
+Compare Redux Thunk and createAsyncThunk for fetching data from an API.
+
+Convert a Redux Thunk to createAsyncThunk and vice versa.
+
+Write a Thunk and createAsyncThunk to handle the same API call and compare the code.
+
+Create a Thunk and createAsyncThunk to handle error handling for an API call.
+
+Write a Thunk and createAsyncThunk to handle loading states for an API call.
+
+Create a Thunk and createAsyncThunk to handle paginated data fetching.
+
+Write a Thunk and createAsyncThunk to handle search functionality.
+
+Create a Thunk and createAsyncThunk to handle file uploads.
+
+Write a Thunk and createAsyncThunk to handle real-time updates.
+
+Create a Thunk and createAsyncThunk to handle authentication token refresh.
+
+Write a Thunk and createAsyncThunk to handle API retries.
+
+Create a Thunk and createAsyncThunk to handle race conditions.
+
+Write a Thunk and createAsyncThunk to handle debounced API calls.
+
+Create a Thunk and createAsyncThunk to handle dependent API calls.
+
+Write a Thunk and createAsyncThunk to handle parallel API calls.
+
+Create a Thunk and createAsyncThunk to handle sequential API calls.
+
+Write a Thunk and createAsyncThunk to handle optimistic updates.
+
+Create a Thunk and createAsyncThunk to handle undo functionality.
+
+Write a Thunk and createAsyncThunk to handle polling for real-time updates.
+
+Create a Thunk and createAsyncThunk to handle API cancellation.
