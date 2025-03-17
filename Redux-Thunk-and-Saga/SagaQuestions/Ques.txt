@@ -1,0 +1,359 @@
+Basic Redux Saga Questions (1-20)
+
+Create a Saga to fetch data from an API.
+
+Condition: Use call and put effects to fetch data from https://jsonplaceholder.typicode.com/posts.
+
+Dispatch an action to trigger a Saga.
+
+Condition: Dispatch a FETCH_DATA_REQUEST action to start the Saga.
+
+Handle loading state in a Saga.
+
+Condition: Dispatch a FETCH_DATA_LOADING action before making the API call.
+
+Handle success state in a Saga.
+
+Condition: Dispatch a FETCH_DATA_SUCCESS action with the fetched data.
+
+Handle error state in a Saga.
+
+Condition: Dispatch a FETCH_DATA_FAILURE action if the API call fails.
+
+Use takeEvery to listen for actions.
+
+Condition: Listen for FETCH_DATA_REQUEST actions and run the Saga.
+
+Use takeLatest to cancel previous Sagas.
+
+Condition: Cancel any previous FETCH_DATA_REQUEST Saga if a new one is triggered.
+
+Create a Saga to fetch user details.
+
+Condition: Fetch user details from https://jsonplaceholder.typicode.com/users.
+
+Create a Saga to fetch comments for a post.
+
+Condition: Fetch comments from https://jsonplaceholder.typicode.com/comments?postId=1.
+
+Use call to call an API.
+
+Condition: Use call to fetch data from an API.
+
+Use put to dispatch an action.
+
+Condition: Dispatch a FETCH_DATA_SUCCESS action after fetching data.
+
+Use take to listen for a specific action.
+
+Condition: Use take to listen for a FETCH_DATA_REQUEST action.
+
+Use fork to run a Saga in the background.
+
+Condition: Fork a Saga to fetch data in the background.
+
+Use all to run multiple Sagas in parallel.
+
+Condition: Run two Sagas simultaneously to fetch posts and users.
+
+Use race to handle race conditions.
+
+Condition: Race between an API call and a timeout.
+
+Cancel a running Saga.
+
+Condition: Use cancel to stop a Saga if a CANCEL_FETCH action is dispatched.
+
+Test a Saga using redux-saga-test-plan.
+
+Condition: Write a test for a Saga that fetches data.
+
+Use select to access the Redux state.
+
+Condition: Access the userId from the state before fetching user details.
+
+Use delay to add a delay in a Saga.
+
+Condition: Add a 2-second delay before fetching data.
+
+Intermediate Redux Saga Questions (21-50)
+Fetch paginated data using Sagas.
+
+Condition: Fetch data for page 1, then page 2, and so on.
+
+Handle authentication using Sagas.
+
+Condition: Create a Saga to handle user login and store the token.
+
+Handle logout using Sagas.
+
+Condition: Clear the user token and redirect to the login page.
+
+Fetch data based on user input.
+
+Condition: Fetch data from an API based on a search query.
+
+Debounce API calls using Sagas.
+
+Condition: Debounce search input to avoid excessive API calls.
+
+Poll an API using Sagas.
+
+Condition: Fetch data from an API every 5 seconds.
+
+Handle file uploads using Sagas.
+
+Condition: Upload a file to a server and track progress.
+
+Handle real-time updates using Sagas.
+
+Condition: Connect to a WebSocket and update the state in real-time.
+
+Handle caching using Sagas.
+
+Condition: Check if data is already in the state before making an API call.
+
+Handle retries using Sagas.
+
+Condition: Retry an API call up to 3 times if it fails.
+
+Handle multiple API calls in sequence.
+
+Condition: Fetch user details, then fetch their posts.
+
+Handle multiple API calls in parallel.
+
+Condition: Fetch posts and comments simultaneously.
+
+Handle dependent API calls.
+
+Condition: Fetch a post, then fetch its comments.
+
+Handle conditional API calls.
+
+Condition: Fetch data only if a certain condition is met.
+
+Handle API calls with query parameters.
+
+Condition: Fetch data with query parameters like ?userId=1.
+
+Handle API calls with headers.
+
+Condition: Add an Authorization header to the API request.
+
+Handle API calls with pagination.
+
+Condition: Fetch data for the next page when a "Load More" button is clicked.
+
+Handle API calls with filtering.
+
+Condition: Fetch data filtered by a specific category.
+
+Handle API calls with sorting.
+
+Condition: Fetch data sorted by a specific field.
+
+Handle API calls with infinite scrolling.
+
+Condition: Fetch more data when the user scrolls to the bottom of the page.
+
+Advanced Redux Saga Questions (51-100)
+Handle API calls with cancellation.
+
+Condition: Cancel an API call if the user navigates away from the page.
+
+Handle API calls with timeouts.
+
+Condition: Cancel an API call if it takes longer than 5 seconds.
+
+Handle API calls with retries and exponential backoff.
+
+Condition: Retry an API call with increasing delays between attempts.
+
+Handle API calls with batched requests.
+
+Condition: Combine multiple API requests into a single request.
+
+Handle API calls with caching and invalidation.
+
+Condition: Cache API responses and invalidate the cache after a certain time.
+
+Handle API calls with optimistic updates.
+
+Condition: Update the UI before the API call completes.
+
+Handle API calls with rollback on failure.
+
+Condition: Revert the UI update if the API call fails.
+
+Handle API calls with progress tracking.
+
+Condition: Track the progress of a file upload.
+
+Handle API calls with chunked uploads.
+
+Condition: Upload a large file in chunks.
+
+Handle API calls with streaming responses.
+
+Condition: Stream data from an API and update the UI in real-time.
+
+Handle API calls with WebSocket integration.
+
+Condition: Integrate a WebSocket to receive real-time updates.
+
+Handle API calls with GraphQL.
+
+Condition: Fetch data from a GraphQL API.
+
+Handle API calls with REST and GraphQL combined.
+
+Condition: Fetch data from both REST and GraphQL APIs.
+
+Handle API calls with authentication tokens.
+
+Condition: Refresh the authentication token if it expires.
+
+Handle API calls with rate limiting.
+
+Condition: Limit the number of API calls per minute.
+
+Handle API calls with error boundaries.
+
+Condition: Show an error boundary if an API call fails.
+
+Handle API calls with fallback data.
+
+Condition: Show fallback data if the API call fails.
+
+Handle API calls with offline support.
+
+Condition: Store API responses locally and use them when offline.
+
+Handle API calls with background sync.
+
+Condition: Sync data with the server when the app comes online.
+
+Handle API calls with push notifications.
+
+Condition: Show a push notification when new data is available.
+
+Handle API calls with analytics tracking.
+
+Condition: Track API call performance and errors.
+
+Handle API calls with logging.
+
+Condition: Log API requests and responses for debugging.
+
+Handle API calls with mocking.
+
+Condition: Mock API responses for testing.
+
+Handle API calls with error recovery.
+
+Condition: Recover from an API error and retry the call.
+
+Handle API calls with user feedback.
+
+Condition: Show a loading spinner or error message based on the API call status.
+
+Handle API calls with localization.
+
+Condition: Fetch localized data based on the user's language.
+
+Handle API calls with A/B testing.
+
+Condition: Fetch different data based on an A/B test variant.
+
+Handle API calls with feature toggles.
+
+Condition: Fetch data only if a feature toggle is enabled.
+
+Handle API calls with versioning.
+
+Condition: Fetch data from a specific API version.
+
+Handle API calls with data transformation.
+
+Condition: Transform API responses before updating the state.
+
+Handle API calls with data validation.
+
+Condition: Validate API responses before updating the state.
+
+Handle API calls with data normalization.
+
+Condition: Normalize API responses before updating the state.
+
+Handle API calls with data denormalization.
+
+Condition: Denormalize API responses before displaying them.
+
+Handle API calls with data pagination and normalization.
+
+Condition: Paginate and normalize API responses.
+
+Handle API calls with data filtering and normalization.
+
+Condition: Filter and normalize API responses.
+
+Handle API calls with data sorting and normalization.
+
+Condition: Sort and normalize API responses.
+
+Handle API calls with data aggregation.
+
+Condition: Aggregate data from multiple API responses.
+
+Handle API calls with data deduplication.
+
+Condition: Deduplicate data from multiple API responses.
+
+Handle API calls with data merging.
+
+Condition: Merge data from multiple API responses.
+
+Handle API calls with data diffing.
+
+Condition: Show only the differences between two API responses.
+
+Handle API calls with data synchronization.
+
+Condition: Sync data between the client and server.
+
+Handle API calls with data versioning.
+
+Condition: Handle multiple versions of the same data.
+
+Handle API calls with data archiving.
+
+Condition: Archive old data and fetch only the latest data.
+
+Handle API calls with data backup.
+
+Condition: Backup data to a secondary server.
+
+Handle API calls with data restore.
+
+Condition: Restore data from a backup.
+
+Handle API calls with data migration.
+
+Condition: Migrate data from an old API to a new API.
+
+Handle API calls with data encryption.
+
+Condition: Encrypt data before sending it to the server.
+
+Handle API calls with data decryption.
+
+Condition: Decrypt data received from the server.
+
+Handle API calls with data compression.
+
+Condition: Compress data before sending it to the server.
+
+Handle API calls with data decompression.
+
+Condition: Decompress data received from the server
