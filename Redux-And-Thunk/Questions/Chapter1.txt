@@ -1,0 +1,167 @@
+If you dispatch an action in a component but don’t use useSelector, will the component re-render when the Redux state changes?
+
+What happens if you dispatch an action that doesn’t change the Redux state? Will the component re-render?
+
+If you use useDispatch to dispatch an action but don’t access any state, will the component still subscribe to the Redux store?
+
+What happens if you dispatch an action in useEffect without any dependencies? Will it cause an infinite loop?
+
+If you dispatch an action in a component but the reducer doesn’t handle that action type, what happens to the Redux state?
+
+Can you dispatch an action from a component that is not connected to the Redux store? What happens?
+
+If you dispatch an action in a component and the reducer returns the same state object, will the component re-render?
+
+What happens if you dispatch an action in a component but forget to add the reducer case for that action type?
+
+If you dispatch an action in a component and the reducer returns a new state object with the same values, will the component re-render?
+
+Can you dispatch an action from a child component that updates the Redux state and see the changes in a parent component?
+
+Intermediate Scenarios
+If you dispatch an action in a component and the reducer returns a deeply nested object with the same values, will the component re-render?
+
+What happens if you dispatch an action in a component and the reducer mutates the state directly?
+
+If you dispatch an action in a component and the reducer returns a new state object with different values, will all connected components re-render?
+
+What happens if you dispatch an action in a component and the reducer returns undefined?
+
+If you dispatch an action in a component and the reducer throws an error, what happens to the Redux state?
+
+Can you dispatch an action from a component that is wrapped in React.memo? Will it re-render?
+
+If you dispatch an action in a component and the reducer returns the same state but with a new reference, will the component re-render?
+
+What happens if you dispatch an action in a component and the reducer returns a new state object with a missing property?
+
+If you dispatch an action in a component and the reducer returns a new state object with an extra property, will the component re-render?
+
+Can you dispatch an action from a component that is not a direct child of the Provider? What happens?
+
+Advanced Scenarios
+If you dispatch an action in a component and the reducer returns a new state object with a circular reference, what happens?
+
+What happens if you dispatch an action in a component and the reducer returns a new state object with a NaN value?
+
+If you dispatch an action in a component and the reducer returns a new state object with a null value, will the component re-render?
+
+What happens if you dispatch an action in a component and the reducer returns a new state object with an undefined value?
+
+If you dispatch an action in a component and the reducer returns a new state object with a function, will the component re-render?
+
+Can you dispatch an action from a component that is using useContext instead of useSelector? What happens?
+
+If you dispatch an action in a component and the reducer returns a new state object with a Symbol, will the component re-render?
+
+What happens if you dispatch an action in a component and the reducer returns a new state object with a BigInt?
+
+If you dispatch an action in a component and the reducer returns a new state object with a Proxy, will the component re-render?
+
+Can you dispatch an action from a component that is using a custom hook instead of useDispatch? What happens?
+
+Scenario-Based Questions on Redux Thunk
+Basic Scenarios
+If you dispatch a thunk action in a component but don’t use useSelector, will the component re-render when the Redux state changes?
+
+What happens if you dispatch a thunk action that doesn’t dispatch any further actions? Will the component re-render?
+
+If you dispatch a thunk action in a component but the thunk doesn’t make any API calls, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the API call fails? Will the component re-render?
+
+If you dispatch a thunk action in a component and the API call succeeds but the reducer doesn’t change the state, will the component re-render?
+
+Can you dispatch a thunk action from a component that is not connected to the Redux store? What happens?
+
+If you dispatch a thunk action in a component and the thunk dispatches multiple actions, will the component re-render multiple times?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that the reducer doesn’t handle?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns the same state, will the component re-render?
+
+Can you dispatch a thunk action from a child component that updates the Redux state and see the changes in a parent component?
+
+Intermediate Scenarios
+If you dispatch a thunk action in a component and the thunk makes multiple API calls, will the component re-render after each call?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that mutates the state directly?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a deeply nested object with the same values, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns undefined?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that throws an error, what happens to the Redux state?
+
+Can you dispatch a thunk action from a component that is wrapped in React.memo? Will it re-render?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns the same state but with a new reference, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a missing property?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with an extra property, will the component re-render?
+
+Can you dispatch a thunk action from a component that is not a direct child of the Provider? What happens?
+
+Advanced Scenarios
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a circular reference, what happens?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a NaN value?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a null value, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with an undefined value?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a function, will the component re-render?
+
+Can you dispatch a thunk action from a component that is using useContext instead of useSelector? What happens?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a Symbol, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a BigInt?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a Proxy, will the component re-render?
+
+Can you dispatch a thunk action from a component that is using a custom hook instead of useDispatch? What happens?
+
+Real-World Scenarios
+If you dispatch a thunk action in a component to fetch user data but don’t use useSelector, will the component re-render when the data is fetched?
+
+What happens if you dispatch a thunk action in a component to post data to an API but the API call fails? Will the component re-render?
+
+If you dispatch a thunk action in a component to update data in an API but the reducer doesn’t change the state, will the component re-render?
+
+Can you dispatch a thunk action from a component that is not connected to the Redux store but is a child of a connected component? What happens?
+
+If you dispatch a thunk action in a component to delete data from an API but the reducer returns the same state, will the component re-render?
+
+What happens if you dispatch a thunk action in a component to fetch paginated data but the reducer returns a new state object with the same values?
+
+If you dispatch a thunk action in a component to fetch filtered data but the reducer returns a new state object with a missing property, will the component re-render?
+
+Can you dispatch a thunk action from a component that is using React.memo and useSelector? Will it re-render?
+
+If you dispatch a thunk action in a component to fetch sorted data but the reducer returns a new state object with an extra property, will the component re-render?
+
+What happens if you dispatch a thunk action in a component to fetch data based on a search query but the reducer returns undefined?
+
+Edge Cases
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a circular reference, what happens?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a NaN value?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a null value, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with an undefined value?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a function, will the component re-render?
+
+Can you dispatch a thunk action from a component that is using useContext instead of useSelector? What happens?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a Symbol, will the component re-render?
+
+What happens if you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a BigInt?
+
+If you dispatch a thunk action in a component and the thunk dispatches an action that returns a new state object with a Proxy, will the component re-render?
+
+Can you dispatch a thunk action from a component that is using a custom hook instead of useDispatch? What happens?
