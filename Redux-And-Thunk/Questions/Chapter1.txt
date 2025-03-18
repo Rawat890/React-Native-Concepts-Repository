@@ -1,27 +1,42 @@
 If you dispatch an action in a component but don’t use useSelector, will the component re-render when the Redux state changes?
+Answer - No , because useSelector is required to access the state and values that is Subscription to store, but the state updates as we dispatch an action
 
 What happens if you dispatch an action that doesn’t change the Redux state? Will the component re-render?
+Answer - No the component will not re rendered as there is no update in the state
 
 If you use useDispatch to dispatch an action but don’t access any state, will the component still subscribe to the Redux store?
+Answer -Yes, useDispatch still subscribes your component to the store, even if you don't read from the state.
+
+
+If you use useSelector but don’t pass the state, will the component still subscribe to the Redux store?
+Answer - No, we have to pass the state as an argument in the callback function in order to subscribe
 
 What happens if you dispatch an action in useEffect without any dependencies? Will it cause an infinite loop?
+Answer - By default empty dependency array is passed,that means the effect will run only once, so no infinite loop
 
 If you dispatch an action in a component but the reducer doesn’t handle that action type, what happens to the Redux state?
+Answer - renders the same state till you are dispatching the action
 
 Can you dispatch an action from a component that is not connected to the Redux store? What happens?
 
 If you dispatch an action in a component and the reducer returns the same state object, will the component re-render?
+Answer- No the component will not re render and returns same state object
 
 What happens if you dispatch an action in a component but forget to add the reducer case for that action type?
+Answer- Then outputs the same state, so no re render
 
 If you dispatch an action in a component and the reducer returns a new state object with the same values, will the component re-render?
+Answer - No the component will not re rendered as the value not changes
 
 Can you dispatch an action from a child component that updates the Redux state and see the changes in a parent component?
+Answer - Yes we can see the changes in the state and both the components get rendered
 
 Intermediate Scenarios
 If you dispatch an action in a component and the reducer returns a deeply nested object with the same values, will the component re-render?
+Answer - returns and logs the same state and no re render is performed
 
 What happens if you dispatch an action in a component and the reducer mutates the state directly?
+React will not be able to know the state changed and thus the component will not re render
 
 If you dispatch an action in a component and the reducer returns a new state object with different values, will all connected components re-render?
 
