@@ -1,0 +1,79 @@
+Which function or component used by component to subscribe to store
+
+In a React-Redux application, components subscribe to the Redux store to access the state and receive updates when the state changes. There are two primary ways components can subscribe to the store:
+
+1. useSelector Hook (Functional Components)
+The useSelector hook is used in functional components to subscribe to the Redux store and extract specific pieces of state.
+
+It takes a selector function as an argument, which receives the entire Redux state and returns the specific part of the state the component needs.
+
+Whenever the selected state changes, the component will re-render.
+
+import { useSelector } from 'react-redux';
+
+const Component = () => {
+  // Subscribe to the counter value in the Redux store
+  const counter = useSelector((state) => state.counter);
+
+  return <div>Counter: {counter}</div>;
+};
+
+2. connect Function (Class Components)
+The connect function is used in class components to subscribe to the Redux store.
+
+It takes two arguments:
+
+mapStateToProps: A function that maps the Redux state to the component's props.
+
+mapDispatchToProps: A function that maps action creators to the component's props.
+
+The connect function returns a higher-order component (HOC) that wraps the original component and provides the Redux state and actions as props.
+import { connect } from 'react-redux';
+
+class Component extends React.Component {
+  render() {
+    // Access the counter value from props
+    const { counter } = this.props;
+    return <div>Counter: {counter}</div>;
+  }
+}
+
+// Map Redux state to component props
+const mapStateToProps = (state) => ({
+  counter: state.counter,
+});
+
+// Connect the component to the Redux store
+export default connect(mapStateToProps)(Component);
+Key Differences
+Feature	useSelector Hook	connect Function
+Component Type	Functional Components	Class Components
+State Access	Directly via selector function	Via mapStateToProps
+Re-rendering	Automatically re-renders on state change	Re-renders when props change
+Performance	Optimized with shallow comparison	Requires manual optimization
+Ease of Use	Simpler and more concise	More verbose
+How Subscribing Works
+Subscription Setup:
+
+When a component uses useSelector or connect, it subscribes to the Redux store.
+
+The store keeps track of all subscribed components.
+
+State Update:
+
+When an action is dispatched and the state is updated, the store notifies all subscribed components.
+
+Re-rendering:
+
+The component re-renders if the selected state (via useSelector or mapStateToProps) has changed.
+
+Example in Your Scenario
+In your example:
+
+Component 1, Component 2, and Component 3 can use either useSelector (for functional components) or connect (for class components) to subscribe to the Redux store and access the counter value.
+
+When the button in Component 1 is clicked, it dispatches an action to update the counter value in the store.
+
+Component 2 and Component 3 will re-render if they are subscribed to the counter value and it changes.
+
+

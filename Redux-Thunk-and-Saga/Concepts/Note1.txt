@@ -1,0 +1,208 @@
+In your example, how does the Redux store know which reducer to use when the button in Component 1 is clicked?
+
+If the counter value is updated in the Redux store, why does Component 2 re-render but not Component 3?
+
+What happens if two components dispatch the same action to update the counter value simultaneously?
+
+How does React-Redux ensure that only the subscribed components re-render when the state changes?
+
+If the counter value is stored in the Redux store, why can’t we directly modify it instead of dispatching an action?
+
+What would happen if you forgot to pass the Provider component in your React app?
+
+How does the useSelector hook know which part of the state to access?
+
+If you have multiple reducers, how does Redux combine them into a single store?
+
+What would happen if you dispatch an action without defining a corresponding reducer?
+
+How does Redux ensure immutability when updating the state?
+
+Redux Thunk
+In your example, how would you modify the action creator to use Redux Thunk for an asynchronous counter update?
+
+What would happen if you dispatch a Thunk action without using the dispatch function inside it?
+
+How would you handle an API call in the action creator to fetch the counter value from a server?
+
+If the API call fails, how would you update the Redux store to reflect the error state?
+
+How would you ensure that the counter value is updated only after the API call is successful?
+
+What is the difference between dispatching a plain action and a Thunk action?
+
+How would you test a Thunk action that involves an API call?
+
+If you have multiple Thunk actions, how would you ensure they don’t interfere with each other?
+
+How would you cancel an ongoing API call in a Thunk action?
+
+What would happen if you dispatch a Thunk action from a component that is not connected to the Redux store?
+
+Redux Saga
+In your example, how would you replace Redux Thunk with Redux Saga to handle the counter update?
+
+How would you create a saga to listen for the counter update action?
+
+What is the difference between a takeEvery and takeLatest effect in Redux Saga?
+
+How would you handle an API call in a saga to fetch the counter value?
+
+If the API call fails, how would you dispatch an error action in the saga?
+
+How would you ensure that the counter value is updated only after the saga completes its task?
+
+What would happen if you forget to yield an effect in a saga?
+
+How would you test a saga that involves an API call?
+
+If you have multiple sagas, how would you ensure they don’t interfere with each other?
+
+How would you cancel an ongoing saga task?
+
+Component Behavior
+In your example, why does Component 2 re-render when the counter value changes?
+
+What would happen if Component 3 is not subscribed to the Redux store?
+
+How would you prevent Component 2 from re-rendering unnecessarily?
+
+If Component 1 dispatches an action, how does Component 3 know to display the updated counter value?
+
+What would happen if you use useSelector in Component 3 but don’t specify the counter value?
+
+How would you optimize the performance of Component 2 if it re-renders too often?
+
+What would happen if you use useSelector with a deep comparison in Component 3?
+
+How would you ensure that Component 1, Component 2, and Component 3 all re-render only when necessary?
+
+What would happen if you use useSelector in Component 2 but don’t pass a selector function?
+
+How would you debug why Component 3 is not updating when the counter value changes?
+
+State Management
+In your example, how would you add a new piece of state (e.g., isLoading) to the Redux store?
+
+What would happen if you forget to return a new state object in the reducer?
+
+How would you handle nested state updates in the reducer?
+
+What would happen if you mutate the state directly in the reducer?
+
+How would you combine multiple pieces of state in a single reducer?
+
+What would happen if you have two reducers updating the same piece of state?
+
+How would you handle state persistence in the Redux store?
+
+What would happen if you dispatch an action that doesn’t match any case in the reducer?
+
+How would you reset the counter value to its initial state?
+
+What would happen if you forget to define an initial state in the reducer?
+
+Middleware
+In your example, how would you add logging middleware to log every action dispatched?
+
+What would happen if you forget to apply the Thunk middleware to the Redux store?
+
+How would you add multiple middleware (e.g., Thunk and Saga) to the Redux store?
+
+What would happen if you dispatch an action before the middleware is fully set up?
+
+How would you create custom middleware for your Redux store?
+
+What would happen if your custom middleware doesn’t call next(action)?
+
+How would you handle side effects in middleware without using Thunk or Saga?
+
+What would happen if you dispatch an action from within middleware?
+
+How would you test custom middleware in Redux?
+
+What would happen if you apply the same middleware twice in the Redux store?
+
+Advanced Scenarios
+In your example, how would you implement undo/redo functionality for the counter?
+
+What would happen if you dispatch an action from within a reducer?
+
+How would you handle circular dependencies between actions and reducers?
+
+What would happen if you use useSelector in a component that is not wrapped in Provider?
+
+How would you implement pagination using Redux Thunk or Saga?
+
+What would happen if you dispatch an action from within a saga?
+
+How would you handle real-time updates (e.g., WebSocket) in Redux?
+
+What would happen if you forget to yield an effect in a saga?
+
+How would you implement lazy loading for Redux reducers?
+
+What would happen if you dispatch an action from within another action?
+
+Testing
+How would you test the reducer for the counter functionality?
+
+What would happen if you forget to mock the API call in a Thunk action test?
+
+How would you test a component that dispatches an action to update the counter?
+
+What would happen if you forget to mock the store in a component test?
+
+How would you test a saga that involves an API call?
+
+What would happen if you forget to mock the dispatch function in a Thunk action test?
+
+How would you test middleware in Redux?
+
+What would happen if you forget to mock the getState function in a Thunk action test?
+
+How would you test a component that uses useSelector to access the counter value?
+
+What would happen if you forget to mock the next function in a middleware test?
+
+Debugging
+In your example, how would you debug why the counter value is not updating?
+
+What would happen if you forget to bind the action creator to dispatch?
+
+How would you debug why Component 2 is not re-rendering?
+
+What would happen if you forget to add the reducer to the combineReducers function?
+
+How would you debug why an action is not reaching the reducer?
+
+What would happen if you forget to apply the middleware to the store?
+
+How would you debug why a saga is not listening to an action?
+
+What would happen if you forget to yield an effect in a saga?
+
+How would you debug why a Thunk action is not dispatching?
+
+What would happen if you forget to wrap your app in the Provider component?
+
+Performance Optimization
+In your example, how would you optimize the performance of Component 2?
+
+What would happen if you use useSelector with a deep comparison in Component 3?
+
+How would you implement memoization in a selector function?
+
+What would happen if you forget to memoize a selector function?
+
+How would you optimize the performance of a Redux store with a large state?
+
+What would happen if you use useSelector in a component that re-renders too often?
+
+How would you implement lazy loading for Redux reducers?
+
+What would happen if you forget to split your reducers into smaller functions?
+
+How would you optimize the performance of a saga that involves an API call?
+
+What would happen if you forget to cancel an ongoing saga task?

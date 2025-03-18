@@ -1,0 +1,68 @@
+//Steps to user CreateAsync Thunk
+1. Initialize the initial object
+2. Define the asynchronous function via CreateAsyncThunk
+   const nameOfFunction = CreateAsyncThunk('actionName', async ()=>{
+    //code of process 
+    return data;
+   })
+3. Create slice 
+ const sliceName = createSlice(nameOfSlice, initialStateObject, reducers, extraReducers:(builder)=>{
+ //3 states pending, fulfilled, updated
+ })
+
+ 4. Export the reducer and the slice
+ export default sliceName.reducer
+ export const sliceNameActions = sliceName.sliceNameActions
+
+ 5. Configure store
+ const store  = ConfigureStore({
+  reducer:{
+    sliceName-passed-in-createSlice =  sliceName //reference
+  }
+ })
+
+ 6. dispatch the sliceNameActions
+ 
+ 1. subscribe
+What it is: subscribe is an effect used to listen for certain events or actions in the Redux store, typically used when you want to create a listener that reacts to state changes.
+Usage: It’s less commonly used directly in the codebase as Redux-Saga often works with the more declarative take or takeEvery effects to respond to actions, but subscribe is useful when you need more complex control over subscriptions.
+const channel = yield subscribe(selector);
+2. unsubscribe
+What it is: unsubscribe is used to stop listening to certain events or actions that were previously subscribed to using subscribe. This is necessary for cleaning up the listener when it is no longer needed to prevent memory leaks.
+Usage: You would call unsubscribe after you no longer need to listen for events or actions.
+yield unsubscribe(channel);
+3. take
+What it is: take is an effect used to wait for a specific action to be dispatched to the Redux store. Once the action is dispatched, take will yield the action.
+Usage: Typically used in sagas that need to wait for a specific action before continuing. It blocks the saga until the action is received.
+Example:
+javascript
+Copy code
+const action = yield take('SOME_ACTION');
+console.log(action);  // Will log the action when 'SOME_ACTION' is dispatched
+You can use take with specific action types or patterns, and it is often used with yield take('ACTION_TYPE') inside sagas to trigger further actions or logic.
+
+4. select
+What it is: select is an effect used to access the current state of the Redux store. It allows you to read values from the store without directly dispatching actions or having access to the entire store.
+Usage: This is useful when you need to inspect the Redux state during a saga’s execution. The select effect takes a selector function as an argument, which is used to extract a specific part of the state.
+Example:
+javascript
+Copy code
+const state = yield select(state => state.someValue);
+console.log(state);  // Will log the value of state.someValue
+Summary of use cases:
+subscribe: To listen for state changes, generally used with more advanced patterns.
+unsubscribe: To clean up listeners from subscribe.
+take: To wait for a specific action to be dispatched.
+select: To read the state from the store during the execution of a saga.
+
+
+Feature	     Reducer                                                        	ExtraReducer
+Definition	A function that handles state     	A special kind of reducer used with createSlice() for handling
+            updates based on actions.          actions from outside the slice (e.g., async actions).
+Usage Context	Used to handle actions defined in the slice.	Used to handle actions that are not directly defined in the slice, such as async actions (thunks) or actions from other slices.
+Action Source	Actions that are defined within the same slice.	Actions that come from other slices or asynchronous actions (e.g., thunk actions).
+Type of Actions	Typically handles actions defined in the reducers object of createSlice().	Handles actions dispatched outside the slice, like thunks or actions from other slices.
+State Modification	Modifies the slice's state based on its own actions.	Modifies the slice’s state in response to actions defined elsewhere, especially for async logic.
+Example Usage	reducers: { increment: (state) => state.count++ }	extraReducers: (builder) => { builder.addCase(fetchData.fulfilled, (state, action) => { state.data = action.payload }) }
+Key Advantage	Simplifies action creation and state management for the slice itself.	Allows handling of actions that are outside of the slice’s scope, like those created by createAsyncThunk.
+Typical Use Cases	For synchronous actions that affect the state directly.	For handling asynchronous actions (like fetching data), or actions from other slices.
