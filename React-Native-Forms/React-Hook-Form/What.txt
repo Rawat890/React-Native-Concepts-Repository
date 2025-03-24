@@ -1,0 +1,140 @@
+It is a library that helps to deal with forms in React and react Native
+Why?
+Manage form data
+submit form data
+enforce validation
+Provide visual feedback
+provides simple , scalable and performant way of managing complex forms
+
+Managing state of the form
+Every form has a few moving parts that keeps on changing time a user loads the form to the time they submit
+1. current value of every field in the form
+2. Whether the field has been interacted with
+3. whether a field's value has changed
+4. whether the form is invalid
+5. Whether a field contains error and so on.....
+They represent the form state
+
+Key value pairs -
+{
+  value:{......},
+  visited:{......},
+  errors:{......},
+  isValid:boolean
+}
+
+To maintain them manually is time consuming
+
+  const {register} = form
+This register method allows us to register the form control with form
+//Returns 4 methods used in form control
+const{name, ref, onChange, onBlur}= register("username")
+
+1. useForm Hook:
+javascript
+Copy code
+const { control, handleSubmit, formState: { errors } } = useForm();
+useForm() is the main hook provided by React Hook Form. It initializes the form and returns several utilities to manage form state, including:
+
+control: An object that is used to manage form inputs using the Controller component.
+
+handleSubmit: A function that wraps the submit handler to handle the form submission and validation. It automatically prevents the default form submission behavior.
+
+formState: { errors }: Contains validation errors for the form inputs. The errors object will hold any validation error messages, such as missing or invalid values.
+
+2. Controller Component:
+javascript
+Copy code
+<Controller
+  control={control}
+  render={({ field: { onChange, value } }) => (
+    <TextInput
+    
+      style={styles.input}
+      value={value}
+      onChangeText={onChange}
+      placeholder="Enter your username"
+    />
+  )}
+  name="username"
+  rules={{ required: 'Username is required' }}
+/>
+Controller is a component used to wrap each input field in the form. It connects each input to the useForm hook’s state management and allows the inputs to be controlled.
+
+control: The control prop passed to Controller connects the input field to the form.
+
+render: This prop is a function where you define the actual input component (TextInput in this case). Inside the render function, onChange is used to update the value, and value is used to set the input’s value.
+
+name: Specifies the field name in the form state. For example, the name for the first input is "username", so it will be part of the form data when submitted.
+
+rules: Defines validation rules for the field. For example, { required: 'Username is required' } ensures that the username field is required.
+
+3. Validation Rules:
+In the form, validation rules are set via the rules prop inside each Controller component. These rules can be customized based on the field's requirements.
+
+For the Username field, the rule is { required: 'Username is required' }, which means the username field cannot be empty.
+
+For the Email field, additional validation is done using a regular expression to match a valid email format:
+
+javascript
+Copy code
+pattern: {
+  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+  message: 'Invalid email address',
+}
+For the Channel field, no validation is required, so an empty object is passed as the rules prop.
+
+4. Error Handling:
+javascript
+Copy code
+{errors.username && <Text style={styles.error}>{errors.username.message}</Text>}
+errors is an object containing the validation errors for each input field. If an error exists for a specific field (like username), it will display the error message below the respective input field. For example, if the username is empty, the error message will be displayed: "Username is required."
+
+The error message is dynamically pulled from the errors object using the field name (errors.username.message).
+
+5. Form Submission:
+javascript
+Copy code
+const onSubmit = (data) => {
+  console.log(data);
+};
+handleSubmit(onSubmit): When the form is submitted (via the Submit button), handleSubmit will validate the form fields and, if successful, call the onSubmit function with the form data.
+
+onSubmit is a function that receives the form data as an argument, which you can then handle or send to an API (in this case, it simply logs the data to the console).
+
+6. TextInput for Form Fields:
+javascript
+Copy code
+<TextInput
+  style={styles.input}
+  value={value}
+  onChangeText={onChange}
+  placeholder="Enter your username"
+/>
+TextInput is used for gathering user input. It is controlled by the Controller component, and its value is managed by React Hook Form through the onChange and value props.
+
+value is bound to the input’s value, while onChangeText is the callback function used to update the value in the form state when the user types.
+
+7. Submit Button:
+javascript
+Copy code
+<Button title="Submit" onPress={handleSubmit(onSubmit)} />
+The Submit Button triggers the form submission by calling handleSubmit(onSubmit), which internally validates the form and then triggers the onSubmit function with the form data.
+
+8. Styling:
+The styling here is done using StyleSheet.create() from React Native, which is a basic way to define the styles for various elements such as input fields, containers, and error messages.
+
+Summary:
+React Hook Form is being used to manage form state in a clean and efficient way.
+
+useForm initializes the form and provides utilities like control, handleSubmit, and errors.
+
+Controller is used to wire up form inputs (like TextInput) with useForm, managing the form field state and validation.
+
+Validation is done using the rules prop within each Controller, ensuring that the fields meet the required conditions before submitting the form.
+
+Error messages are displayed conditionally if validation fails for a field.
+
+Form data is collected and handled in the onSubmit function when the user presses the submit button.
+
+By using React Hook Form, you get a streamlined way to handle forms with validation in React Native apps while minimizing boilerplate code.

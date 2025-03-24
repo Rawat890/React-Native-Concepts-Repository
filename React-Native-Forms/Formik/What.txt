@@ -1,0 +1,69 @@
+Formik is a library that helps you deal with forms with react.
+Why ? 
+Managing the form data
+Form submission
+Form validation and displaying error messages
+
+Allows us to deal with forms in a scalable and performant manner
+
+Course structure -
+Build a simple Form
+use Formik hook
+Manage the form state
+handle form submission
+validation
+Formik components
+Reusable components for input , text area, select, radio buttons
+Build a use registration form
+Wire a ui library
+
+NPM INSTALL FORMIK
+
+FormState ={
+  name:'Vishwas' --> 'Hardik'
+  age:34 --->19
+}
+
+const formik = useFormik({
+  initialValues:{
+    name:'',
+    age:''
+  }
+})
+
+
+//Form submission
+First specify the onSubmit prop in Formik tag or the View in which the form components are specified
+(If using the formik constant that holds the object of initialValues and onSubmit)
+
+example - const formik = useFormik({
+  initialValues:{
+    name:', 
+    age:23  },
+  
+  //receives FormState as argument
+  onSubmit:{
+    (values)=>{
+      clg(values)
+    }
+  }
+})
+
+<View onSubmit={formik.handleSubmit}
+
+So we do not have to specify it in the submit button
+
+
+//validation
+useFormik({
+  initialValues:{...},
+  onSubmit:{....},
+  validate: values => {
+      //values.name, values.email, values.password
+      let errors ={}
+
+    }//validate function assigned to validate property of useFormik hook
+})
+
+
+// Form Validation - to display validation only on key stroke and then leave -> on Blur used
