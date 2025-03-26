@@ -1,140 +1,158 @@
-It is a library that helps to deal with forms in React and react Native
-Why?
-Manage form data
-submit form data
-enforce validation
-Provide visual feedback
-provides simple , scalable and performant way of managing complex forms
+It is a js library that is used to handle the form validation and submission like things
+The main 2 things that it do is-
+1. Manage the form state
+2. Submission of the form
+3. Validation of the form
 
-Managing state of the form
-Every form has a few moving parts that keeps on changing time a user loads the form to the time they submit
-1. current value of every field in the form
-2. Whether the field has been interacted with
-3. whether a field's value has changed
-4. whether the form is invalid
-5. Whether a field contains error and so on.....
-They represent the form state
+useForm = This is a hook that is provided by the library that returns an object containing some properties. It is a custom hook that is used for managing the forms with ease. It takes one object as optional argument.
 
-Key value pairs -
-{
-  value:{......},
-  visited:{......},
-  errors:{......},
-  isValid:boolean
-}
+const form  = useForm() //This line will create a form variable that holds the object returned by useForm hook
 
-To maintain them manually is time consuming
+const {register, control}=form()
 
-  const {register} = form
-This register method allows us to register the form control with form
-//Returns 4 methods used in form control
-const{name, ref, onChange, onBlur}= register("username")
+1. register method helps the field to register within the react hook form so that it is available for the validation, and it can be tracked
 
-1. useForm Hook:
+2. handleSubmit method handles the form submission
+
+3. React hook form does not re render on every keyStroke like the normal forms, which is great for performance
+
+4. Form submission
+   define function that will be called when the button is pressed
+   destructure handleSubmit from form object
+   onPress
+
+
+Form Validation - This applies to form so that all the registered fields must obey some specific criteria like -pattern, min, max, minLength etc
+1. Controller component is used
+Used to wrap the custom components that are not inherently compatible with useForm, It is suitable when using third party libraries like Material UI, AntDesign
+Acts as a bridge between the react hook form internal state and the custom inputs
+
+control
+This is an object returned by useForm that holds the internal state and methods for handling form data. We need to pass this control object to the Controller component to link it with the form state.
+
+Must return the component from the render
+render :({field:{onSubmit, OnBlur, value}})
+
+
+What is field object
+
+In react-hook-form, the Controller component is used to integrate controlled components (like TextInput) with the form management system. When you use Controller, it provides a field object that contains several properties to manage the input field's state.
+
+The field object includes the following properties:
+
+1. onChange:
+This is a function that should be called when the value of the input field changes. It is responsible for updating the value in the form state. For example, when the user types in the input field, onChange is triggered to update the form's internal state with the new value.
+
+Example:
+
 javascript
 Copy code
-const { control, handleSubmit, formState: { errors } } = useForm();
-useForm() is the main hook provided by React Hook Form. It initializes the form and returns several utilities to manage form state, including:
+onChange(text) {
+  // This will update the value in the form state
+}
+In the case of the Controller, you pass onChange to the TextInput's onChangeText prop (for React Native):
 
-control: An object that is used to manage form inputs using the Controller component.
+javascript
+Copy code
+<TextInput
+  onChangeText={onChange}
+  value={value}
+/>
+2. onBlur:
+This is a function that is triggered when the input field loses focus (i.e., when the user clicks or taps outside of the input or switches to another input field). It is often used for validation purposes or to mark a field as "touched" once the user has interacted with it.
 
-handleSubmit: A function that wraps the submit handler to handle the form submission and validation. It automatically prevents the default form submission behavior.
+onBlur() {
+  // Trigger validation or mark field as touched
+}
+In the Controller, it is typically passed to the TextInput's onBlur prop:
+<TextInput
+  onBlur={onBlur}
+  value={value}
+/>
+3. value:
+This represents the current value of the input field as stored in the form state. It is the value that the form keeps track of and updates whenever the user types in the field or when the field is programmatically updated.
 
-formState: { errors }: Contains validation errors for the form inputs. The errors object will hold any validation error messages, such as missing or invalid values.
+Example:
 
-2. Controller Component:
+javascript
+Copy code
+<TextInput
+  value={value}
+/>
+The value prop is passed to the TextInput so that it reflects the form's state. Whenever the form state changes (via onChange), the value is updated to ensure the input field displays the latest value.
+
+How They Work Together:
+onChange updates the form state with the new value when the user types or interacts with the field.
+
+onBlur helps track when the field has been interacted with and is often used to trigger validation or change the state of the form (e.g., marking a field as "touched").
+
+value is the current form value for the field, which ensures that the input is always in sync with the form's state.
+
+Putting it all together:
+Here’s how these properties work together in the Controller component:
+
 javascript
 Copy code
 <Controller
   control={control}
-  render={({ field: { onChange, value } }) => (
+  name="userName"
+  render={({ field: { onChange, onBlur, value } }) => (
     <TextInput
-    
       style={styles.input}
-      value={value}
-      onChangeText={onChange}
       placeholder="Enter your username"
+      onChangeText={onChange}  // updates form value when text changes
+      onBlur={onBlur}          // triggers when input loses focus
+      value={value}            // displays the current form value
     />
   )}
-  name="username"
-  rules={{ required: 'Username is required' }}
 />
-Controller is a component used to wrap each input field in the form. It connects each input to the useForm hook’s state management and allows the inputs to be controlled.
-
-control: The control prop passed to Controller connects the input field to the form.
-
-render: This prop is a function where you define the actual input component (TextInput in this case). Inside the render function, onChange is used to update the value, and value is used to set the input’s value.
-
-name: Specifies the field name in the form state. For example, the name for the first input is "username", so it will be part of the form data when submitted.
-
-rules: Defines validation rules for the field. For example, { required: 'Username is required' } ensures that the username field is required.
-
-3. Validation Rules:
-In the form, validation rules are set via the rules prop inside each Controller component. These rules can be customized based on the field's requirements.
-
-For the Username field, the rule is { required: 'Username is required' }, which means the username field cannot be empty.
-
-For the Email field, additional validation is done using a regular expression to match a valid email format:
-
-javascript
-Copy code
-pattern: {
-  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-  message: 'Invalid email address',
-}
-For the Channel field, no validation is required, so an empty object is passed as the rules prop.
-
-4. Error Handling:
-javascript
-Copy code
-{errors.username && <Text style={styles.error}>{errors.username.message}</Text>}
-errors is an object containing the validation errors for each input field. If an error exists for a specific field (like username), it will display the error message below the respective input field. For example, if the username is empty, the error message will be displayed: "Username is required."
-
-The error message is dynamically pulled from the errors object using the field name (errors.username.message).
-
-5. Form Submission:
-javascript
-Copy code
-const onSubmit = (data) => {
-  console.log(data);
-};
-handleSubmit(onSubmit): When the form is submitted (via the Submit button), handleSubmit will validate the form fields and, if successful, call the onSubmit function with the form data.
-
-onSubmit is a function that receives the form data as an argument, which you can then handle or send to an API (in this case, it simply logs the data to the console).
-
-6. TextInput for Form Fields:
-javascript
-Copy code
-<TextInput
-  style={styles.input}
-  value={value}
-  onChangeText={onChange}
-  placeholder="Enter your username"
-/>
-TextInput is used for gathering user input. It is controlled by the Controller component, and its value is managed by React Hook Form through the onChange and value props.
-
-value is bound to the input’s value, while onChangeText is the callback function used to update the value in the form state when the user types.
-
-7. Submit Button:
-javascript
-Copy code
-<Button title="Submit" onPress={handleSubmit(onSubmit)} />
-The Submit Button triggers the form submission by calling handleSubmit(onSubmit), which internally validates the form and then triggers the onSubmit function with the form data.
-
-8. Styling:
-The styling here is done using StyleSheet.create() from React Native, which is a basic way to define the styles for various elements such as input fields, containers, and error messages.
-
 Summary:
-React Hook Form is being used to manage form state in a clean and efficient way.
+onChange: Updates the form state with the input value when it changes.
 
-useForm initializes the form and provides utilities like control, handleSubmit, and errors.
+onBlur: Triggers when the field loses focus, often used for validation or marking the field as "touched."
 
-Controller is used to wire up form inputs (like TextInput) with useForm, managing the form field state and validation.
+value: The current value of the field, managed by react-hook-form's state, that keeps the input synchronized with the form.
 
-Validation is done using the rules prop within each Controller, ensuring that the fields meet the required conditions before submitting the form.
+These properties ensure that your form is controlled and that the input fields behave consistently with the form's state.
 
-Error messages are displayed conditionally if validation fails for a field.
 
-Form data is collected and handled in the onSubmit function when the user presses the submit button.
+Validation Rules------->
+Controller Component that is used to link the controlled components like input fields to the internal form state,
+control -  object is returned by use form that is used to link Controller to the form state
+rules - used to set validations and messages also, validate values here 
+{errors.fieldName && <Text>{errors.fieldName.message}</Text>}
 
-By using React Hook Form, you get a streamlined way to handle forms with validation in React Native apps while minimizing boilerplate code.
+ rules={{
+          required: 'Required !!',
+          pattern: {
+            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+            message: 'Invalid Format'
+          },
+          validate: {
+            notAdmin: (fieldValue) => {
+              // Check if email is not "john@gmail.com"
+              if (fieldValue !== 'john@gmail.com') {
+                return 'Please enter admin email';
+              }
+              return true; // Email is valid
+            }
+          }
+ }}
+
+
+
+
+Array data -
+1. set the array in defaultValues object
+   phoneNumbers=["",""]
+2. <Controller name:'phoneNumbers.0' render={}/>
+
+Dynamic value -
+useFieldArray hook - This hook is a powerful tool that allows you to dynamically add or remove fields in a form, making it easier to manage complex forms with multiple inputs. 
+1.import the hook
+2. add the property to default values i.e. array of objects
+3. const {fields}=useFieldArray({
+  name:'propertyName'
+  control
+})
+4. Add jsx

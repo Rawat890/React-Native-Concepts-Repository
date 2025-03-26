@@ -1,30 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import { useForm } from 'react-hook-form';
 
-const Form1 = () => {
 
-  //initialized a react hook form
+const Form2 = () => {
+
+  let renderCount = useRef(0)
   const form = useForm();
-
-  //accessing the properties of useForm Object
   const { register, handleSubmit, setValue } = form;
 
-  //register the fields to the form
+  renderCount.current += 1
   useEffect(() => {
     register('userName');
     register('channel');
     register('email');
-  }, [register])
+  }, [register]);
 
-  //For submission
-  const onSubmit = data => {
-    console.log(data)
-  }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
+
+
 
   return (
     <View style={styles.container}>
-
+      <Text style={styles.label}>YoutubeForm ({renderCount.current})</Text>
       <Text style={styles.label}>Username</Text>
       <TextInput
         style={styles.input}
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Form1;
+export default Form2;

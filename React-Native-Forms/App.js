@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Practice2 from './Formik/Practice Folder/Practice2';
-import Form7 from './Formik/Form7';
+import { StyleSheet } from 'react-native';
+import React from 'react';
+import Form9 from './React-Hook-Form/YoutubeForm/Form9';
 
 export default function App() {
+
+
   return (
     <>
       <StatusBar style='light' />
-      <Form7 />
+      <Form9 />
     </>
   );
 }
@@ -17,7 +19,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4cb050',
-    backgroundColor: 'grey'
   },
   status1: {
     backgroundColor: 'grey'

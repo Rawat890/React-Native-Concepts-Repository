@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { View, Text, StyleSheet, KeyboardAvoidingView, ScrollView, TextInput, Pressable } from 'react-native';
-
-function Practice2(params) {
+import React from 'react';
+function Practice2() {
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -63,7 +63,7 @@ function Practice2(params) {
   console.log(formik.touched);
 
   return (
-    <>
+    <View>
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Patient Details</Text>
         <Text style={styles.headerDescription}>Fill the form below and we will be back soon with updates</Text>
@@ -174,7 +174,7 @@ function Practice2(params) {
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
-    </>
+    </View>
   );
 }
 
