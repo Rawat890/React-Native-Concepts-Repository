@@ -1,21 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import Form9 from './React-Hook-Form/YoutubeForm/Form9';
+import Form4 from './/React-Hook-Form/Practice-Folder/Form4'
 
 export default function App() {
 
 
   return (
-    <>
+    <View style={styles.container}>
       <StatusBar style='light' />
-      <Form9 />
-    </>
+      <Form4 />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#4cb050',
